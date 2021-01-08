@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Tile.tscn" type="PackedScene" id=2]
+
+[node name="Game" type="Node2D"]
+
+[node name="Tile" parent="." instance=ExtResource( 2 )]
+position = Vector2( 60.8967, 157.681 )
+
+[node name="Tile2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 142.792, 179.099 )
+
+[node name="Tile3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 224.686, 208.078 )
+
+[node name="Tile4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 314.141, 242.095 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 61.8388, 40.433 )
