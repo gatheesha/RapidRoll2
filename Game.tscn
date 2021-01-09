@@ -16,7 +16,19 @@ position = Vector2( 400.867, 1231.27 )
 position = Vector2( 510.05, 1356.01 )
 
 [node name="TileStatic" parent="." instance=ExtResource( 5 )]
-position = Vector2( 391.579, 1351.27 )
+position = Vector2( 392.328, 1355.76 )
+
+[node name="TileStatic2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 187.06, 1681.64 )
+
+[node name="TileStatic3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 372.101, 1424.68 )
+
+[node name="TileStatic4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 340.636, 1503.34 )
+
+[node name="TileStatic5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 259.728, 1587.25 )
 
 [node name="Spawner" type="Node2D" parent="."]
 script = ExtResource( 3 )

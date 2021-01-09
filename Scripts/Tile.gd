@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (int) var scroll_speed = 100
+export (int) var scroll_speed = 1
 var velocity = Vector2.ZERO
 
 func _ready():
