@@ -20,6 +20,21 @@ position = Vector2( 224.686, 208.078 )
 [node name="Tile4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 314.141, 242.095 )
 
+[node name="Tile5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 132.192, 563.181 )
+
+[node name="Tile6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 458.035, 528.694 )
+
+[node name="Tile7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 345.06, 466.855 )
+
+[node name="Tile8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 234.464, 389.557 )
+
+[node name="Tile9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 118.141, 336.095 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 61.8388, 40.433 )
 
