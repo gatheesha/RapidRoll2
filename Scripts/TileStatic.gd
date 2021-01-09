@@ -7,4 +7,4 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	position.y += scrollspeed * delta 
+	position.y -= scrollspeed * delta 
