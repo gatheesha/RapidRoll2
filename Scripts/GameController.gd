@@ -5,6 +5,8 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var posx
+var gravity = 10
+#hi hello everyone i currenlty a stupid!
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
