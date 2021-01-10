@@ -1,9 +1,10 @@
 extends KinematicBody2D
 
 export (int) var speed = 200
-export (int) var gravity = 400
+export (int) var gravity = 300
 export (bool) var jumpable = true
-export (int) var jump_speed = -180
+export (int) var jump_speed = -250
+
 
 var velocity = Vector2.ZERO
 
@@ -28,3 +29,6 @@ func _process(delta):
 	if global_position.y > 720:
 		get_tree().reload_current_scene()
 		print_debug("restarted")
+#make sure player always on the scene, use clamp func. it has 3 arguments
+	var viewRect = get_viewport_rect()
+	position.x = clamp(position.x,0,viewRect.size.x)
