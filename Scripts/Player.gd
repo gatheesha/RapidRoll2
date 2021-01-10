@@ -32,3 +32,4 @@ func _process(delta):
 #make sure player always on the scene, use clamp func. it has 3 arguments
 	var viewRect = get_viewport_rect()
 	position.x = clamp(position.x,0,viewRect.size.x)
+	position.y = clamp(position.y,0,viewRect.size.y)
