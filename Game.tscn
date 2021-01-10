@@ -1,44 +1,41 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Tile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Trail.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Spawner.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/GameController.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/TileStatic.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Trail.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Tile.tscn" type="PackedScene" id=5]
 
-[sub_resource type="Gradient" id=1]
-colors = PoolColorArray( 1, 0.282353, 0.282353, 0, 0.937255, 0.176471, 0.337255, 1 )
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 1, 0.282353, 0.282353, 0, 0.960784, 0.282353, 0.282353, 0.431373 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 400.867, 1231.27 )
+position = Vector2( 113.122, 68.173 )
+speed = 300
+jump_speed = -400
 
-[node name="Trail" parent="Player" instance=ExtResource( 6 )]
-z_index = -1
-default_color = Color( 0.4, 0.501961, 1, 1 )
-gradient = SubResource( 1 )
+[node name="Trail" parent="Player" instance=ExtResource( 2 )]
+position = Vector2( -377.074, -227.243 )
+scale = Vector2( 3.33333, 3.33333 )
+width = 25.0
+width_curve = SubResource( 1 )
+gradient = SubResource( 2 )
+begin_cap_mode = 1
+end_cap_mode = 2
 targetPath = NodePath("..")
 
-[node name="Tile" parent="." instance=ExtResource( 2 )]
-position = Vector2( 510.05, 1356.01 )
-
-[node name="TileStatic" parent="." instance=ExtResource( 5 )]
-position = Vector2( 392.328, 1355.76 )
-
-[node name="TileStatic2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 187.06, 1681.64 )
-
-[node name="TileStatic3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 372.101, 1424.68 )
-
-[node name="TileStatic4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 340.636, 1503.34 )
-
-[node name="TileStatic5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 259.728, 1587.25 )
+[node name="Tile" parent="." instance=ExtResource( 5 )]
+position = Vector2( 282.494, 391.007 )
 
 [node name="Spawner" type="Node2D" parent="."]
 script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="Spawner"]
+autostart = true
+[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_Timer_timeout"]

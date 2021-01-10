@@ -20,6 +20,10 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP,false, 4, PI/4, false)
 	
 	if Input.is_action_just_pressed("jump") && jumpable == true:
-		if is_on_floor():
-			velocity.y = jump_speed
-			
+		#if is_on_floor(): #this is disabled for testing purposes and i'm expecting to disable jumping permenantly
+		velocity.y = jump_speed
+
+func _process(delta):
+	if global_position.y > 720:
+		get_tree().reload_current_scene()
+		print_debug("restarted")

@@ -1,14 +1,22 @@
 extends Node2D
 
+var tilescene = preload("res://Scenes/Tile.tscn")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-var tile = preload("res://Scenes/Tile.tscn")
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Timer.start() #this is optional lol
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Timer_timeout():
+	#rand no genenrator and getting screen size
+	
+	var rand = RandomNumberGenerator.new()
+	var screen_size = get_viewport().get_visible_rect().size
+	
+	#Getting a Random position
+	var tile = tilescene.instance()
+	rand.randomize()
+	var x = rand.randf_range(0,screen_size.x)
+	rand.randomize()
+	var y = screen_size.y
+	tile.position.y = y
+	tile.position.x = x
+	add_child(tile) #spawn a tile

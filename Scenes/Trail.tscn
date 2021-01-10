@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Trail.gd" type="Script" id=1]
 
+[sub_resource type="Gradient" id=1]
+
 [node name="Trail" type="Line2D"]
+gradient = SubResource( 1 )
 script = ExtResource( 1 )

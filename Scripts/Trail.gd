@@ -7,7 +7,6 @@ export var trailLength = 10
 
 func _ready():
 	target = get_node(targetPath)
-	pass
 
 func _process(delta):
 	global_position = Vector2(0,0)
@@ -16,4 +15,3 @@ func _process(delta):
 	add_point(point)
 	while get_point_count() > trailLength:
 		remove_point(0)
-	pass
