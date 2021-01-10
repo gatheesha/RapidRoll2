@@ -18,6 +18,7 @@ script = ExtResource( 4 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 113.122, 68.173 )
 speed = 300
+gravity = 100
 jump_speed = -400
 
 [node name="Trail" parent="Player" instance=ExtResource( 2 )]
