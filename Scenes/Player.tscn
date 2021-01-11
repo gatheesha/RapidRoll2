@@ -8,6 +8,7 @@ radius = 40.2354
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 0.3, 0.3 )
+collision/safe_margin = 1.0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -1,29 +1,35 @@
 extends KinematicBody2D
 
-export (int) var speed = 200
-export (int) var gravity = 300
+export (int) var speed = 450
+export (int) var gravity = 100
 export (bool) var jumpable = true
 export (int) var jump_speed = -250
 
 
 var velocity = Vector2.ZERO
 
+var friction = 0.1
+var acceleration = 0.5
+
+
 func get_input():
 	velocity.x = 0
 	if Input.is_action_pressed("go_right"):
 		velocity.x += speed
 	if Input.is_action_pressed("go_left"):
-		velocity.x -= speed
+		velocity.x -= speed 
 
 func _physics_process(delta):
 	get_input()
 	if !is_on_floor():
-		velocity.y += gravity * delta
-	velocity = move_and_slide(velocity, Vector2.UP,false, 4, PI/4, false)
+		velocity.y = gravity * delta
+	move_and_slide(velocity, Vector2(0, -1))
+	print_debug(velocity.y)
 	
 	if Input.is_action_just_pressed("jump") && jumpable == true:
 		#if is_on_floor(): #this is disabled for testing purposes and i'm expecting to disable jumping permenantly
 		velocity.y = jump_speed
+		print_debug("jumped")
 
 func _process(delta):
 	if global_position.y > 720:
@@ -32,4 +38,4 @@ func _process(delta):
 #make sure player always on the scene, use clamp func. it has 3 arguments
 	var viewRect = get_viewport_rect()
 	position.x = clamp(position.x,0,viewRect.size.x)
-	position.y = clamp(position.y,0,viewRect.size.y)
+	#position.y = clamp(position.y,0,viewRect.size.y)

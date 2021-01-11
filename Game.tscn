@@ -17,11 +17,12 @@ script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 113.122, 68.173 )
-speed = 300
+gravity = 10000
 
 [node name="Trail" parent="Player" instance=ExtResource( 2 )]
 position = Vector2( -377.074, -227.243 )
 scale = Vector2( 3.33333, 3.33333 )
+z_index = -1
 width = 25.0
 width_curve = SubResource( 1 )
 gradient = SubResource( 2 )
