@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Trail.tscn" type="PackedScene" id=2]
@@ -6,12 +6,15 @@
 [ext_resource path="res://Scripts/GameController.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Tile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Shaders/Trail Gradient.tres" type="Gradient" id=6]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Curve" id=1]
 _data = [ Vector2( 0, 0 ), 0.0, 1.05667, 0, 0, Vector2( 1, 1 ), 1.25589, 0.0, 0, 0 ]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 4 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 7 )]
 
 [node name="Tile" parent="." instance=ExtResource( 5 )]
 position = Vector2( 282.494, 391.007 )
@@ -26,6 +29,7 @@ autostart = true
 
 [node name="Trail" parent="Player" instance=ExtResource( 2 )]
 scale = Vector2( 3.33333, 3.33333 )
+points = PoolVector2Array( 293, 125 )
 width = 22.0
 width_curve = SubResource( 1 )
 gradient = ExtResource( 6 )
