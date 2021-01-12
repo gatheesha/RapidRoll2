@@ -1,16 +1,15 @@
 extends KinematicBody2D
 
 export (int) var speed = 450
-export (int) var gravity = 100
+export (int) var gravity = 320
 export (bool) var jumpable = true
 export (int) var jump_speed = -20
 
 
 var velocity = Vector2.ZERO
 
-var friction = 2
+var friction = 2 #vars for kinematic fiction
 var acceleration = 1
-
 
 func get_input():
 	var dir = 0
@@ -21,7 +20,7 @@ func get_input():
 	if Input.is_action_pressed("go_left"):
 		velocity.x -= speed
 		dir -= 1
-
+#kinematic Fiction
 	if dir != 0:
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
 	else:

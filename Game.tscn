@@ -26,7 +26,6 @@ autostart = true
 
 [node name="Trail" parent="Player" instance=ExtResource( 2 )]
 scale = Vector2( 3.33333, 3.33333 )
-points = PoolVector2Array( 293, 125 )
 width = 22.0
 width_curve = SubResource( 1 )
 gradient = ExtResource( 6 )
