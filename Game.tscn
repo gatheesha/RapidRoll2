@@ -36,3 +36,4 @@ gradient = ExtResource( 6 )
 joint_mode = 2
 targetPath = NodePath("..")
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_Timer_timeout"]
+[connection signal="is_on_platform" from="Player" to="Tile" method="_on_Player_is_on_platform"]

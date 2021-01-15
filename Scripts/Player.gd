@@ -11,6 +11,8 @@ var velocity = Vector2.ZERO
 var friction = 2 #vars for kinematic fiction
 var acceleration = 1
 
+signal is_on_platform
+
 func get_input():
 	var dir = 0
 	velocity.x = 0
@@ -36,7 +38,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("jump") && jumpable == true:
 		#if is_on_floor(): #this is disabled for testing purposes and i'm expecting to disable jumping permenantly
 		velocity.y = jump_speed
-		print_debug("jumped")
+
 
 func _process(delta):
 	if global_position.y > 720:
